@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Movie Details - CineCast</title>
+        <link rel="icon" type="image/png" href="../Images/favicon.png">
+        <style>
+            body {
+                /*for not allowing to copy*/
+                user-select: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none
+            };
+            ::-webkit-scrollbar {
+                width: 15px;
+            }
+            ::-webkit-scrollbar-track {
+                background: black;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: black;
+                border-radius: 10px;
+                border: solid #3f1b44;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: #3f1b44;
+
+            }
+            ::placeholder {
+                color: white;
+                opacity: 1;
+            }
+        </style>
+    </head>
+
+    <body style="margin: 0; padding: 0; font-family: Arial, sans-serif;">
+        
+        <div style="display: flex; height: 100vh;">
+            <div
+                style="flex: 1; background-color: black; color: white; display: flex; flex-direction: column; justify-content: center; padding: 50px;">
+                <h1 id="movie-title" style="margin-bottom: 20px; font-size: 36px;"></h1>
+                <p id="movie-description" style="font-size: 18px; line-height: 1.6; color: #ccc;"></p>
+                <div style="display: flex; gap: 15px;">
+                    <!-- Trailer Button -->
+                    <a id="trailer-link" href="https://example.com/trailer" target="_blank"
+                        style="text-decoration: none; padding: 12px 20px; background-color: #b13030; color: white; border-radius: 10px; font-size: 16px; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;transform: scale(1); box-shadow: 50px;"
+                        onmouseover="this.style.backgroundColor='#ff4747'; this.style.transform='scale(1.1)'; this.style.boxShadow='0px 4px 10px rgba(0, 0, 0, 0.2)';"
+                        onmouseout="this.style.backgroundColor='#b13030'; this.style.transform='scale(1)'; this.style.boxShadow='none';">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-play-fill" viewBox="0 0 16 16">
+                            <path
+                                d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+                        </svg>
+                        Watch Trailer
+                    </a>
+                    <!-- Movie Button -->
+                    <a id="movie-link" href="https://example.com/movie" target="_blank" style="text-decoration: none; padding: 12px 20px; background-color: #1e3a8a; 
+                            color: white; border-radius: 10px; font-size: 16px; 
+                            display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;
+                            transform: scale(1); box-shadow: none;"
+                        onmouseover="this.style.backgroundColor='#3b5998'; this.style.transform='scale(1.1)'; this.style.boxShadow='0px 4px 10px rgba(0, 0, 0, 0.2)';"
+                        onmouseout="this.style.backgroundColor='#1e3a8a'; this.style.transform='scale(1)'; this.style.boxShadow='none';">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFFFFF"
+                            viewBox="0 0 356.859 356.859">
+                            <g>
+                                <path
+                                    d="M9.849,130.711l341.726-60.257l-1.203-6.856l-8.612-48.845L0,75.016l1.347,7.629l7.265,41.216l1.208,6.856l0.005-0.001 v188.596c0,12.534,10.255,22.794,22.794,22.794h301.445c12.534,0,22.794-10.255,22.794-22.794v-188.6H9.849z M336.174,23.606 l6.077,34.468l-40.09-28.472L336.174,23.606z M287.36,32.212l47.939,34.043l-41.216,7.265l-47.939-34.043L287.36,32.212z M230.252,42.283l47.939,34.043l-41.211,7.265l-47.939-34.043L230.252,42.283z M173.153,52.349l47.939,34.043l-41.216,7.265 l-47.939-34.043L173.153,52.349z M116.045,62.42l47.939,34.043l-41.216,7.265L74.829,69.686L116.045,62.42z M58.941,72.492 l47.939,34.043L65.664,113.8L17.725,79.757L58.941,72.492z M8.904,87.944L49.772,116.6l-34.877,6.149L8.904,87.944z M340.224,138.458l-41.298,41.851h-41.851l41.298-41.851H340.224z M282.235,138.458l-41.298,41.851h-41.851l41.298-41.851H282.235z M224.246,138.458l-41.298,41.851h-41.846l41.298-41.851H224.246z M166.262,138.458l-41.298,41.851H83.113l41.298-41.851H166.262 z M15.857,174.472v-36.014h35.538L15.857,174.472z M66.427,138.458h41.851L66.98,180.308H25.129L66.427,138.458z M333.619,321.856 H31.846v-115.62h301.773V321.856z M350.817,180.308h-35.753l35.753-35.804V180.308z" />
+                                <rect x="221.834" y="216.829" width="101.192" height="30.346" />
+                                <rect x="221.834" y="258.266" width="101.192" height="52.997" />
+                                <rect x="96.036" y="216.829" width="114.708" height="30.346" />
+                                <rect x="42.44" y="216.829" width="42.506" height="94.433" />
+                                <rect x="96.036" y="258.266" width="114.708" height="52.997" />
+                            </g>
+                        </svg>
+                        Watch Movie
+                    </a>
+                </div>
+            </div>
+            <!-- Right Side (Movie Poster with Fade Effect) -->
+            <div style="flex: 1; position: relative;">
+                <img id="movie-poster" src="" alt="Movie Poster" style="width: 100%; height: 100vh; object-fit: cover;">
+                <div
+                    style="position: absolute; top: 0; left: 0; width: 40%; height: 100%; background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, black 100%);">
+                </div>
+            </div>
+        </div>
+        <script>
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return decodeURIComponent(urlParams.get(param) || '');
+            }
+            document.getElementById("movie-title").textContent = getQueryParam("title") || "Movie Title";
+            document.getElementById("movie-description").textContent = getQueryParam("description") || "Movie description goes here.";
+
+            //poster
+            const moviePoster = document.getElementById("movie-poster");
+            let posterSrc = getQueryParam("poster");
+
+            if (posterSrc.startsWith("http") || posterSrc.startsWith("https")) {
+                moviePoster.src = posterSrc; 
+            } else {
+                moviePoster.src = "../Images/" + posterSrc; 
+            }
+            // handle image error
+            moviePoster.onerror = () => {
+                console.warn(`Failed to load poster: ${posterSrc}, using default image.`);
+                moviePoster.src = "../Images/default_poster.jpeg";
+            };
+            //trailer link
+            const trailerLink = document.getElementById("trailer-link");
+            let trailerURL = getQueryParam("trailer");
+            if (trailerURL) {
+                trailerLink.href = trailerURL;
+            } else {
+                trailerLink.style.display = "none"; 
+            }
+
+            //movie link
+            const movieLink = document.getElementById("movie-link");
+            let movieURL = getQueryParam("movie");
+            if (movieURL) {
+                movieLink.href = movieURL;
+            } else {
+                movieLink.style.display = "none"; 
+            }
+            console.log("Trailer URL:", trailerURL);
+            console.log("Movie URL:", movieURL);
+        </script>
+    </body>
+</html>

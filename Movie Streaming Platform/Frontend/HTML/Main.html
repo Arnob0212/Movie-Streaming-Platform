@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CineCast</title>
+        <link rel="icon" type="image/png" href="../Images/favicon.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+        <link rel="stylesheet" href="../CSS/main.css">
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header class="actual p-3 text-bg-dark">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-between">
+                    <!-- Logo -->
+                    <a href="Main.html" class="d-flex align-items-center text-white text-decoration-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                            class="bi bi-film" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z" />
+                        </svg>
+                    </a>
+                    <!-- Navigation Menu -->
+                    <ul id="navigation" class="nav me-auto">
+                        <li><a href="Main.html" class="nav-link px-2 text-white">Home</a></li>
+                        <li><a href="feature.html" class="nav-link px-2 text-white">Features</a></li>
+                        <li><a href="subscription.html" class="nav-link px-2 text-white">Subscription</a></li>
+                        <li><a href="faq.html" class="nav-link px-2 text-white">FAQs</a></li>
+                        <li><a href="about.html" class="nav-link px-2 text-white">About</a></li>
+                    </ul>
+                    <!-- Search Bar -->
+                    <form class="me-3" role="search" onsubmit="return searchMovie(event);">
+                        <input class="btn btn-outline-light me-2" type="text" id="search-bar"
+                            placeholder="Search for a movie..."
+                            style="padding: 10px; width: 250px;height: 35px; font-size: 16px;">
+                        <button style="width: 80px;" type="submit" class="btn btn-outline-light me-2"
+                            style="height: 35px; font-size: 16px;">Search</button>
+                    </form>
+                    <div class="button-group">
+                        <!-- Authentication Buttons -->
+                        <!-- Login -->
+                        <div id="login-modal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h2>Login</h2>
+                                <input type="text" placeholder="Username">
+                                <input type="password" placeholder="Password">
+                                <button id="modalLoginBtn">Login</button>
+                            </div>
+                        </div>
+                        <!-- Signup  -->
+                        <div id="signup-modal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h2>Sign Up</h2>
+                                <input type="text" placeholder="Email">
+                                <input type="password" placeholder="Password">
+                                <button id="modalSignupBtn">Sign Up</button> <!-- Added id -->
+                            </div>
+                        </div>                    
+                        <button onclick="openModal('login-modal')">Login</button>
+                        <button onclick="openModal('signup-modal')">Sign Up</button>
+                        <!--Sign Out-->
+                        <div id="profileContainer" class="profile-container" style="display: none;">
+                            <div class="profile-dropdown">
+                                <button id="profileIcon">
+                                    <img src="../Images/Profile.jpeg" class="profile-icon" alt="Profile">
+                                </button>
+                                <div class="dropdown-content">
+                                    <p id="userEmail">Not logged in</p>
+                                    <button id="logoutBtn">Sign Out</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--Login Page-->
+        <section>
+            <div class="container col-xxl-8 px-4 py-5">
+                <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                    <div class="col-10 col-sm-8 col-lg-6">
+                        <img src="../Images/CINECAST.jpg" class="d-block mx-lg-auto img-fluid"
+                            alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 style="color: white;" class="display-5 fw-bold  lh-1 mb-3">Binge worthy content always at your fingertips</h1>
+                        <p class="lead">Stream unlimited movies, TV shows, and more—all in one place. Watch anytime, anywhere, with no interruptions at best quality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Carousel Section -->
+        <section class="carousel-section">
+            <h2 style="margin-top: 20px;">Top Rated Movies</h2>
+            <p></p>
+            <div class="carousel-wrapper">
+                <div class="carousel">
+                    <!-- Movie Posters -->
+                    <a href="movie.html?title=The%20Batman&description=A%20noir%20detective%20story%20featuring%20the%20Dark%20Knight.&poster=../Images/batmanPoster.jpeg&trailer=https://www.youtube.com/watch?v=mqqft2x_Aa4&movie=https://www.hbomax.com/thebatman"><img class="movie-card" src="../Images/batmanPoster.jpeg" alt="Batman"></a>
+                    <a href="movie.html?title=Dunkirk&description=Allied%20soldiers%20are%20surrounded%20by%20the%20German%20army%20and%20evacuated%20during%20a%20fierce%20battle%20in%20WWII.&poster=../Images/dunkirk%20poster.webp&movie=https://www.netflix.com/watch/80118255"><img class="movie-card" src="../Images/dunkirk%20poster.webp" alt="Dunkirk"></a>
+                    <a href="movie.html?title=Inception&description=A%20thief%20who%20enters%20the%20dreams%20of%20others%20to%20steal%20secrets%20is%20given%20a%20chance%20to%20have%20his%20past%20erased.&poster=../Images/inception%20poster.jpeg&trailer=https://www.youtube.com/watch?v=YoHD9XEInc0&movie=https://www.netflix.com/watch/70131314"><img class="movie-card" src="../Images/inception%20poster.jpeg" alt="Inception"></a>
+                    <a href="movie.html?title=Interstellar&description=A%20team%20of%20explorers%20travel%20through%20a%20wormhole%20in%20space%20in%20an%20attempt%20to%20ensure%20humanity%E2%80%99s%20survival.&poster=../Images/intersteller%20poster.jpeg&trailer=https://www.youtube.com/watch?v=zSWdZVtXT7E&movie=https://www.netflix.com/watch/70305903"><img class="movie-card" src="../Images/intersteller%20poster.jpeg" alt="Interstellar"></a>
+                    <a href="movie.html?title=La%20La%20Land&description=A%20jazz%20musician%20and%20an%20aspiring%20actress%20fall%20in%20love%20while%20pursuing%20their%20dreams%20in%20Los%20Angeles.&poster=../Images/la%20la%20land%20poster.jpeg&trailer=https://www.youtube.com/watch?v=0pdqf4P9MB8&movie=https://www.youtube.com/watch?v=dnzJpgRUwW0&t=10"><img class="movie-card" src="../Images/la%20la%20land%20poster.jpeg" alt="La La Land"></a>
+                    <a href="movie.html?title=Oppenheimer&description=The%20story%20of%20J.%20Robert%20Oppenheimer%20and%20his%20role%20in%20developing%20the%20atomic%20bomb.&poster=../Images/oppenhiemer%20poster.jpeg&trailer=https://www.youtube.com/watch?v=bK6ldnjE3Y0&movie=https://www.netflix.com/watch/81698738"><img class="movie-card" src="../Images/oppenhiemer%20poster.jpeg" alt="Oppenheimer"></a>
+                    <!-- Duplicate for Infinite Scroll -->
+                    <a href="movie.html?title=The%20Batman&description=A%20noir%20detective%20story%20featuring%20the%20Dark%20Knight.&poster=../Images/batmanPoster.jpeg&trailer=https://www.youtube.com/watch?v=mqqft2x_Aa4&movie=https://www.hbomax.com/thebatman"><img class="movie-card" src="../Images/batmanPoster.jpeg" alt="Batman"></a>
+                    <a href="movie.html?title=Dunkirk&description=Allied%20soldiers%20are%20surrounded%20by%20the%20German%20army%20and%20evacuated%20during%20a%20fierce%20battle%20in%20WWII.&poster=../Images/dunkirk%20poster.webp&movie=https://www.netflix.com/watch/80118255"><img class="movie-card" src="../Images/dunkirk%20poster.webp" alt="Dunkirk"></a>
+                    <a href="movie.html?title=Inception&description=A%20thief%20who%20enters%20the%20dreams%20of%20others%20to%20steal%20secrets%20is%20given%20a%20chance%20to%20have%20his%20past%20erased.&poster=../Images/inception%20poster.jpeg&trailer=https://www.youtube.com/watch?v=YoHD9XEInc0&movie=https://www.netflix.com/watch/70131314"><img class="movie-card" src="../Images/inception%20poster.jpeg" alt="Inception"></a>
+                    <a href="movie.html?title=Interstellar&description=A%20team%20of%20explorers%20travel%20through%20a%20wormhole%20in%20space%20in%20an%20attempt%20to%20ensure%20humanity%E2%80%99s%20survival.&poster=../Images/intersteller%20poster.jpeg&trailer=https://www.youtube.com/watch?v=zSWdZVtXT7E&movie=https://www.netflix.com/watch/70305903"><img class="movie-card" src="../Images/intersteller%20poster.jpeg" alt="Interstellar"></a>
+                    <a href="movie.html?title=La%20La%20Land&description=A%20jazz%20musician%20and%20an%20aspiring%20actress%20fall%20in%20love%20while%20pursuing%20their%20dreams%20in%20Los%20Angeles.&poster=../Images/la%20la%20land%20poster.jpeg&trailer=https://www.youtube.com/watch?v=0pdqf4P9MB8&movie=https://www.youtube.com/watch?v=dnzJpgRUwW0&t=10"><img class="movie-card" src="../Images/la%20la%20land%20poster.jpeg" alt="La La Land"></a>
+                    <a href="movie.html?title=Oppenheimer&description=The%20story%20of%20J.%20Robert%20Oppenheimer%20and%20his%20role%20in%20developing%20the%20atomic%20bomb.&poster=../Images/oppenhiemer%20poster.jpeg&trailer=https://www.youtube.com/watch?v=bK6ldnjE3Y0&movie=https://www.netflix.com/watch/81698738"><img class="movie-card" src="../Images/oppenhiemer%20poster.jpeg" alt="Oppenheimer"></a>
+
+                </div>
+            </div>
+        </section>
+        <section class="carousel-section">
+            <h2 style="margin-top: 20px;">Marvel Studios</h2>
+            <p></p>
+            <div class="carousel-wrapper">
+                <div class="carousel">
+                    <!-- Movie Posters -->
+                    <a href="movie.html?title=Captain%20America&description=A%20super%20soldier%20fights%20for%20justice.&poster=../Images/CaptainAmerica.jpeg&trailer=https://www.youtube.com/watch?v=dKrVegVI0Us&movie=https://www.hotstar.com/in/movies/captain-america-civil-war/1260016768"><img class="images" src="../Images/CaptainAmerica.jpeg" alt="Movie 1"></a>
+                    <a href="movie.html?title=Doctor%20Strange&description=A%20sorcerer%20discovers%20the%20multiverse.&poster=../Images/DoctorStrange.jpeg&trailer=https://www.youtube.com/watch?v=h7gvFravm4A&movie=https://www.hotstar.com/in/movies/doctor-strange/1260018179"><img class="images" src="../Images/DoctorStrange.jpeg" alt="Movie 2"></a>
+                    <a href="movie.html?title=Avengers:%20Endgame&description=The%20Avengers%20assemble%20to%20defeat%20Thanos.&poster=../Images/Endgame.jpeg&trailer=https://www.youtube.com/watch?v=TcMBFSGVi1c&movie=https://www.hotstar.com/in/movies/avengers-endgame/1260013556"><img class="images" src="../Images/Endgame.jpeg" alt="Movie 3"> </a>
+                    <a href="movie.html?title=Guardians%20of%20the%20Galaxy&description=A%20team%20of%20misfits%20saves%20the%20galaxy.&poster=../Images/Gotg.jpeg&trailer=https://www.youtube.com/watch?v=d96cjJhvlMA&movie=https://www.hotstar.com/in/movies/guardians-of-the-galaxy/1260018294"><img class="images" src="../Images/Gotg.jpeg" alt="Movie 4"> </a>
+                    <a href="movie.html?title=Avengers%20Infinity%20War&description=The%20Avengers%20face%20Thanos%20for%20the%20Infinity%20Stones.&poster=../Images/InfinityWar.jpeg&trailer=https://www.youtube.com/watch?v=6ZfuNTqbHE8&movie=https://www.hotstar.com/in/movies/avengers-infinity-war/1660010677"><img class="images" src="../Images/InfinityWar.jpeg" alt="Movie 5"> </a>
+                    <a href="movie.html?title=Iron%20Man&description=A%20billionaire%20builds%20a%20suit%20to%20become%20a%20hero.&poster=../Images/IronMan.jpeg&trailer=https://www.youtube.com/watch?v=8ugaeA-nMTc&movie=https://www.hotstar.com/in/movies/iron-man/1660000038"><img class="images" src="../Images/IronMan.jpeg" alt="Movie 6"> </a>
+                    <!-- Duplicate for Infinite Scroll -->
+                    <a href="movie.html?title=Captain%20America&description=A%20super%20soldier%20fights%20for%20justice.&poster=../Images/CaptainAmerica.jpeg&trailer=https://www.youtube.com/watch?v=dKrVegVI0Us&movie=https://www.hotstar.com/in/movies/captain-america-civil-war/1260016768"><img class="images" src="../Images/CaptainAmerica.jpeg" alt="Movie 1"></a>
+                    <a href="movie.html?title=Doctor%20Strange&description=A%20sorcerer%20discovers%20the%20multiverse.&poster=../Images/DoctorStrange.jpeg&trailer=https://www.youtube.com/watch?v=h7gvFravm4A&movie=https://www.hotstar.com/in/movies/doctor-strange/1260018179"><img class="images" src="../Images/DoctorStrange.jpeg" alt="Movie 2"></a>
+                    <a href="movie.html?title=Avengers:%20Endgame&description=The%20Avengers%20assemble%20to%20defeat%20Thanos.&poster=../Images/Endgame.jpeg&trailer=https://www.youtube.com/watch?v=TcMBFSGVi1c&movie=https://www.hotstar.com/in/movies/avengers-endgame/1260013556"><img class="images" src="../Images/Endgame.jpeg" alt="Movie 3"> </a>
+                    <a href="movie.html?title=Guardians%20of%20the%20Galaxy&description=A%20team%20of%20misfits%20saves%20the%20galaxy.&poster=../Images/Gotg.jpeg&trailer=https://www.youtube.com/watch?v=d96cjJhvlMA&movie=https://www.hotstar.com/in/movies/guardians-of-the-galaxy/1260018294"><img class="images" src="../Images/Gotg.jpeg" alt="Movie 4"> </a>
+                    <a href="movie.html?title=Avengers%20Infinity%20War&description=The%20Avengers%20face%20Thanos%20for%20the%20Infinity%20Stones.&poster=../Images/InfinityWar.jpeg&trailer=https://www.youtube.com/watch?v=6ZfuNTqbHE8&movie=https://www.hotstar.com/in/movies/avengers-infinity-war/1660010677"><img class="images" src="../Images/InfinityWar.jpeg" alt="Movie 5"> </a>
+                    <a href="movie.html?title=Iron%20Man&description=A%20billionaire%20builds%20a%20suit%20to%20become%20a%20hero.&poster=../Images/IronMan.jpeg&trailer=https://www.youtube.com/watch?v=8ugaeA-nMTc&movie=https://www.hotstar.com/in/movies/iron-man/1660000038"><img class="images" src="../Images/IronMan.jpeg" alt="Movie 6"> </a>
+                </div>
+            </div>
+        </section>
+        <section class="carousel-section">
+            <h2 style="margin-top: 20px;">Old Classics</h2>
+            <p></p>
+            <div class="carousel-wrapper">
+                <div class="carousel">
+                    <!-- Movie Posters -->
+                    <a href="movie.html?title=One%20Flew%20Over%20the%20Cuckoo%E2%80%99s%20Nest&description=A%20rebellious%20criminal%20fakes%20insanity%20to%20avoid%20prison%20and%20enters%20a%20mental%20institution%2C%20clashing%20with%20its%20authoritarian%20nurse.&poster=../Images/One%20Flew%20Over%20the%20Cuckoo%E2%80%99s%20Nest.jpeg&trailer=https://youtu.be/OXrcDonY-B8&movie=https://www.primevideo.com/detail/One-Flew-Over-the-Cuckoos-Nest/0QPAG6UZDC7QDWFSB8PGD26OOZ#:~:text=A%20Korean%20War%20veteran%20pleads%20insanity%20to%20escape,the%20patients%20in%20pursuit%20of%20a%20full-blown%20revolution"><img class="images" src="../Images/One%20Flew%20Over%20the%20Cuckoo%E2%80%99s%20Nest.jpeg" alt="One Flew Over the Cuckoo’s Nest"></a>
+                    <a href="movie.html?title=Reservoir%20Dogs&description=A%20group%20of%20criminals%20suspect%20that%20one%20of%20their%20own%20is%20a%20police%20informant%20after%20a%20botched%20diamond%20heist.&poster=../Images/Reservoir%20Dogs.jpeg&trailer=https://youtu.be/vayksn4Y93A&movie=https://www.primevideo.com/detail/Reservoir-Dogs/0K655YDY93V956MRFZ4AFQSSM6"><img class="images" src="../Images/Reservoir%20Dogs.jpeg" alt="Reservoir Dogs"></a>
+                    <a href="movie.html?title=The%20Grand%20Budapest%20Hotel&description=A%20legendary%20concierge%20and%20his%20lobby%20boy%20become%20embroiled%20in%20a%20murder%20mystery%20at%20a%20lavish%20European%20hotel.&poster=../Images/The%20Grand%20Budapest%20Hotel.jpeg&trailer=https://youtu.be/1Fg5iWmQjwk&movie=https://www.primevideo.com/detail/The-Grand-Budapest-Hotel/0TCK7Z07H14X6HUD038936DI8L"><img class="images" src="../Images/The%20Grand%20Budapest%20Hotel.jpeg" alt="The Grand Budapest Hotel"></a>
+                    <a href="movie.html?title=2001%3A%20A%20Space%20Odyssey&description=A%20voyage%20to%20Jupiter%20with%20a%20sentient%20AI%2C%20HAL%209000%2C%20turns%20into%20a%20surreal%20and%20philosophical%20exploration%20of%20humanity.&poster=../Images/2001%20A%20Space%20Odyssey.jpeg&trailer=https://youtu.be/oR_e9y-bka0&movie=https://www.primevideo.com/detail/2001-A-Space-Odyssey/0NU6XDSZMC4Q143ZXG0K8X2R49"><img class="images" src="../Images/2001%20A%20Space%20Odyssey.jpeg" alt="2001: A Space Odyssey"></a>
+                    <a href="movie.html?title=The%20Prestige&description=Two%20rival%20magicians%20engage%20in%20a%20lifelong%20battle%20of%20deception%2C%20obsession%2C%20and%20deadly%20competition.&poster=../Images/The%20Prestige.jpeg&trailer=https://youtu.be/RLtaA9fFNXU&movie=https://www.primevideo.com/detail/The-Prestige/0TN23XKXR5W9N2DTJ3M0WQCUTW"><img class="images" src="../Images/The%20Prestige.jpeg" alt="The Prestige"></a>
+                    <a href="movie.html?title=The%20Social%20Network&description=The%20rise%20of%20Facebook%20and%20the%20legal%20battles%20that%20followed%20are%20explored%20in%20this%20gripping%20drama.&poster=../Images/The%20Social%20Network.jpeg&trailer=https://youtu.be/lB95KLmpLR4&movie=https://www.primevideo.com/detail/The-Social-Network/0QBPFNFDJ4S91K7C26NVMEKUNR"><img class="images" src="../Images/The%20Social%20Network.jpeg" alt="The Social Network"></a>
+                    <!-- Duplicate for Infinite Scroll -->
+                    <a href="movie.html?title=One%20Flew%20Over%20the%20Cuckoo%E2%80%99s%20Nest&description=A%20rebellious%20criminal%20fakes%20insanity%20to%20avoid%20prison%20and%20enters%20a%20mental%20institution%2C%20clashing%20with%20its%20authoritarian%20nurse.&poster=../Images/One%20Flew%20Over%20the%20Cuckoo%E2%80%99s%20Nest.jpeg&trailer=https://youtu.be/OXrcDonY-B8&movie=https://www.primevideo.com/detail/One-Flew-Over-the-Cuckoos-Nest/0QPAG6UZDC7QDWFSB8PGD26OOZ#:~:text=A%20Korean%20War%20veteran%20pleads%20insanity%20to%20escape,the%20patients%20in%20pursuit%20of%20a%20full-blown%20revolution"><img class="images" src="../Images/One%20Flew%20Over%20the%20Cuckoo%E2%80%99s%20Nest.jpeg" alt="One Flew Over the Cuckoo’s Nest"></a>
+                    <a href="movie.html?title=Reservoir%20Dogs&description=A%20group%20of%20criminals%20suspect%20that%20one%20of%20their%20own%20is%20a%20police%20informant%20after%20a%20botched%20diamond%20heist.&poster=../Images/Reservoir%20Dogs.jpeg&trailer=https://youtu.be/vayksn4Y93A&movie=https://www.primevideo.com/detail/Reservoir-Dogs/0K655YDY93V956MRFZ4AFQSSM6"><img class="images" src="../Images/Reservoir%20Dogs.jpeg" alt="Reservoir Dogs"></a>
+                    <a href="movie.html?title=The%20Grand%20Budapest%20Hotel&description=A%20legendary%20concierge%20and%20his%20lobby%20boy%20become%20embroiled%20in%20a%20murder%20mystery%20at%20a%20lavish%20European%20hotel.&poster=../Images/The%20Grand%20Budapest%20Hotel.jpeg&trailer=https://youtu.be/1Fg5iWmQjwk&movie=https://www.primevideo.com/detail/The-Grand-Budapest-Hotel/0TCK7Z07H14X6HUD038936DI8L"><img class="images" src="../Images/The%20Grand%20Budapest%20Hotel.jpeg" alt="The Grand Budapest Hotel"></a>
+                    <a href="movie.html?title=2001%3A%20A%20Space%20Odyssey&description=A%20voyage%20to%20Jupiter%20with%20a%20sentient%20AI%2C%20HAL%209000%2C%20turns%20into%20a%20surreal%20and%20philosophical%20exploration%20of%20humanity.&poster=../Images/2001%20A%20Space%20Odyssey.jpeg&trailer=https://youtu.be/oR_e9y-bka0&movie=https://www.primevideo.com/detail/2001-A-Space-Odyssey/0NU6XDSZMC4Q143ZXG0K8X2R49"><img class="images" src="../Images/2001%20A%20Space%20Odyssey.jpeg" alt="2001: A Space Odyssey"></a>
+                    <a href="movie.html?title=The%20Prestige&description=Two%20rival%20magicians%20engage%20in%20a%20lifelong%20battle%20of%20deception%2C%20obsession%2C%20and%20deadly%20competition.&poster=../Images/The%20Prestige.jpeg&trailer=https://youtu.be/RLtaA9fFNXU&movie=https://www.primevideo.com/detail/The-Prestige/0TN23XKXR5W9N2DTJ3M0WQCUTW"><img class="images" src="../Images/The%20Prestige.jpeg" alt="The Prestige"></a>
+                    <a href="movie.html?title=The%20Social%20Network&description=The%20rise%20of%20Facebook%20and%20the%20legal%20battles%20that%20followed%20are%20explored%20in%20this%20gripping%20drama.&poster=../Images/The%20Social%20Network.jpeg&trailer=https://youtu.be/lB95KLmpLR4&movie=https://www.primevideo.com/detail/The-Social-Network/0QBPFNFDJ4S91K7C26NVMEKUNR"><img class="images" src="../Images/The%20Social%20Network.jpeg" alt="The Social Network"></a>
+                </div>
+            </div>
+        </section>
+        <!--Footer-->
+        <section>
+            <div class="container">
+                <footer class="py-5">
+                    <div class="row">
+                        <div class="col-6 col-md-2 mb-3">
+                            <h5>Section</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="Main.html" class="nav-link p-0 " style="color: white;">Home</a></li>
+                                <li class="nav-item mb-2"><a href="feature.html" class="nav-link p-0 " style="color: white;">Features</a></li>
+                                <li class="nav-item mb-2"><a href="subscription.html" class="nav-link p-0 " style="color: white;">Subscription</a></li>
+                                <li class="nav-item mb-2"><a href="faq.html" class="nav-link p-0 " style="color: white;">FAQs</a></li>
+                                <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0 " style="color: white;">About</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5 offset-md-1 mb-3">
+                            <form id="newsletter-form">
+                                <h5>Subscribe to our newsletter</h5>
+                                <p>Monthly digest of what's new and exciting from us.</p>
+                                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                    <label for="newsletter1" class="visually-hidden">Email address</label>
+                                    <input id="newsletter1" type="email" class="form-control" placeholder="Email address"
+                                        required>
+                                    <button style="color: white;" class="btn" type="submit">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                        <p>© 2025 Company, Inc. All rights reserved.</p>
+                        <ul class="list-unstyled d-flex">
+                            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+                            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+                            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </section>
+        <script src="../Javascript/myScript.js"></script>
+        <script>
+            async function searchMovie(event) {
+                if (event) event.preventDefault();
+                const searchQuery = document.getElementById("search-bar").value.trim();
+                if (!searchQuery) {
+                    alert("Please enter a movie name!");
+                    return;
+                }
+                try {
+                    const response = await fetch(`http://localhost:5000/search?query=${encodeURIComponent(searchQuery)}`);
+                    if (!response.ok) throw new Error("Failed to fetch movies");
+                    const movies = await response.json();
+                    if (movies.length === 0) {
+                        alert("No movies found!");
+                        return;
+                    }
+                    const movie = movies[0];             
+                    const queryParams = new URLSearchParams({
+                        title: movie.title,
+                        description: movie.description,
+                        poster: movie.poster,  
+                        trailer: movie.trailer,
+                        movie: movie.movie
+                    }).toString();
+                    window.location.href = `movie.html?${queryParams}`;
+                } catch (error) {
+                    console.error("Error searching for movies:", error);
+                    alert("Something went wrong! Try again.");
+                }
+            }
+            //newslater
+            document.getElementById("newsletter-form").addEventListener("submit", async function (event) {
+                event.preventDefault(); 
+                let email = document.getElementById("newsletter1").value.trim();
+                if (email) {
+                    try {
+                        let response = await fetch("http://localhost:5000/subscribe", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ email: email })
+                        });
+                        let data = await response.json();
+                        alert(data.message); 
+                    } catch (error) {
+                        alert("Error subscribing. Please try again.");
+                    }
+                } else {
+                    alert("Please enter a valid email address.");
+                }
+            });
+
+            //login
+            document.addEventListener("DOMContentLoaded", () => {
+                const loginBtn = document.querySelector("button[onclick=\"openModal('login-modal')\"]");
+                const signupBtn = document.querySelector("button[onclick=\"openModal('signup-modal')\"]");
+                const profileContainer = document.getElementById("profileContainer");
+
+                document.getElementById("modalLoginBtn").addEventListener("click", async (event) => {
+                    event.preventDefault();
+                    const email = document.querySelector("#login-modal input[type='text']").value.trim();
+                    const password = document.querySelector("#login-modal input[type='password']").value.trim();
+                    if (!email || !password) {
+                        alert("Please enter both email and password");
+                        return;
+                    }
+                    
+                    try {
+                        const response = await fetch("http://localhost:5000/login", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ email, password }),
+                        });
+                        const data = await response.json();
+                        console.log("Server Response:", data); 
+
+                        if (response.ok) {
+                            localStorage.setItem("token", data.token);
+                            alert("Login successful!");
+                            closeModal("login-modal");
+                            updateUIAfterLogin(email);
+                        } else {
+                            alert(data.message);
+                        }
+                    } catch (error) {
+                        console.error("Login Fetch Error:", error);
+                        alert("Error logging in. Check your network and server.");
+                    }
+                });
+                // SignUp
+                document.getElementById("modalSignupBtn").addEventListener("click", async (event) => {
+                    event.preventDefault();
+                    console.log("Signup button clicked!"); 
+                    const email = document.querySelector("#signup-modal input[type='text']").value.trim();
+                    const password = document.querySelector("#signup-modal input[type='password']").value.trim();
+
+                    if (!email || !password) {
+                        alert("Please enter both email and password");
+                        return;
+                    }
+                    if(password.length<8){
+                        alert("Please Create a Strong Password");
+                        return;
+                    }
+
+                    try {
+                        console.log("Sending signup request...");
+                        const response = await fetch("http://localhost:5000/register", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ email, password }),
+                        });
+
+                        const data = await response.json();
+                        console.log("Server Response:", data);
+
+                        if (response.ok) {
+                            alert("Sign-up successful! Please log in.");
+                            closeModal("signup-modal");
+                        } else {
+                            alert(data.message);
+                        }
+                    } catch (error) {
+                        console.error("Signup Fetch Error:", error);
+                        alert("Error signing up. Check your network and server.");
+                    }
+                });
+
+                //Check login status 
+                function checkLoginStatus() {
+                    const token = localStorage.getItem("token");
+                    if (token) {
+                        fetchProfile();
+                    }
+                }
+
+                //Fetch User Profile
+                async function fetchProfile() {
+                    const token = localStorage.getItem("token");
+                    if (!token) return;
+
+                    try {
+                        const response = await fetch("http://localhost:5000/profile", {
+                            headers: { "Authorization": `Bearer ${token}` }
+                        });
+
+                        const data = await response.json();
+                        if (response.ok) {
+                            updateUIAfterLogin(data.email);
+                        } else {
+                            localStorage.removeItem("token");
+                            alert("Session expired. Please log in again.");
+                        }
+                    } catch (error) {
+                        console.error("Error fetching profile:", error);
+                    }
+                }
+
+                // Update UI after login
+                function updateUIAfterLogin(email) {
+                    loginBtn.style.display = "none";
+                    signupBtn.style.display = "none";
+
+                    profileContainer.style.display = "block";
+                    profileContainer.innerHTML = `
+                        <div class="profile-dropdown">
+                            <img src="../Images/Profile.jpeg" id="profileIcon" class="profile-icon" alt="Profile">
+                            <div class="dropdown-content">
+                                <p>${email}</p>
+                                <button id="logoutBtn">Sign Out</button>
+                            </div>
+                        </div>
+                    `;
+
+                    document.getElementById("logoutBtn").addEventListener("click", logout);
+                    document.getElementById("profileIcon").addEventListener("click", toggleDropdown);
+                }
+
+                //Profile Dropdown
+                function toggleDropdown() {
+                    const dropdown = document.querySelector(".dropdown-content");
+                    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+                }
+
+                // Logout Function
+                function logout() {
+                    profileContainer.style.display = "none";
+                    loginBtn.style.display = "inline-block";
+                    signupBtn.style.display = "inline-block";
+                    loginBtn.style.position = "relative";
+                    signupBtn.style.position = "relative";
+                    loginBtn.style.marginRight = "10px"; 
+                    alert("Logged out successfully!");
+                }
+                // Close Modal
+                function closeModal(modalId) {
+                    let modal = document.getElementById(modalId);
+                    if (modal) modal.style.display = "none";
+                }
+                checkLoginStatus();
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,268 @@
+body .actual {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+    border: solid #3f1b44;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3f1b44;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    margin: 0;
+    padding-bottom: 20px;
+    background: radial-gradient(circle at top, #7C1A8B 10%, black 80%);
+    background-attachment: fixed;
+    background-size: cover;
+    /*to stop copyimg text*/
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* carousel styles */
+.carousel-section h2 {
+    margin-left: 10px;
+    font-size: 1.5rem;
+}
+
+.carousel-wrapper {
+    overflow: visible;
+    position: relative;
+    width: 100%;
+}
+
+.carousel {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    white-space: nowrap;
+    animation: scroll 10s linear infinite;
+    width: max-content;
+
+}
+
+.carousel img {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.carousel img:hover {
+    transform: scale(1.2);
+    animation-play-state: paused;
+}
+
+/* Bluish Radiating Glow */
+.glow-container {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 100%;
+    height: 500px;
+    background: radial-gradient(circle at top, #7C1A8B 10%, rgba(124, 26, 139, 0.7) 30%, black 80%);
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 0;
+    margin-top: 30px;
+}
+
+/* Keyframes for Infinite Scrolling */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+img {
+    margin-right: 25px;
+    min-width: 100px;
+    height: 300px;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.carousel-section {
+    margin-bottom: 20px;
+}
+
+.movie-card {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+    background-color: black;
+}
+
+
+/*login*/
+
+.modal {
+    display: none;
+    /* Keep them hidden */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.modal-content {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 350px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* Close Button */
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.close:hover {
+    color: #7C1A8B;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+/* Button */
+button {
+    background-color: #7C1A8B;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: white;
+    color: #791c95;
+}
+
+
+/*dropdown of profile*/
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+
+#profileIcon {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: contain;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: white;
+    min-width: 150px;
+    right: 0;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content p {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.dropdown-content button {
+    width: 100%;
+    padding: 5px;
+    background: #b300ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown-content button:hover {
+    background: #8000cc;
+}
+
+.profile-dropdown:hover .dropdown-content {
+    display: block;
+}

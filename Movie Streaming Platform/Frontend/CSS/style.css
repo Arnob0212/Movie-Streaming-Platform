@@ -1,0 +1,34 @@
+body{
+    user-select: none; /* Prevents text selection */
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For IE/Edge */
+}
+.row{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.checksheet{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.feature col{
+    background-color: #FFFFFF;
+}
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: black; /* Black background */
+}
+
+::-webkit-scrollbar-thumb {
+    background: black; /* Dark gray scrollbar */
+    border-radius: 10px;
+    border: solid #3f1b44;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3f1b44; /* Slightly lighter gray on hover */
+}
